@@ -5,7 +5,7 @@ import { Link } from "@remix-run/react";
 import landing from "../designs/landing.png";
 
 export const meta: MetaFunction = () => {
-  return [{ title: "company_name" }, { name: "description", content: "company_description" }];
+  return [{ title: "Compute Craft" }, { name: "description", content: "Performance Optimization for the Future" }];
 };
 
 export default function Index() {
