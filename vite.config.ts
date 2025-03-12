@@ -9,8 +9,10 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  base: '/compute-craft/',
   plugins: [
     remix({
+      basename: '/compute-craft/',
       ssr: false,
       future: {
         v3_fetcherPersist: true,
