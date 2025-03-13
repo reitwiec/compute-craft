@@ -14,19 +14,19 @@ export default function Index() {
     <div>
       <ScrollingMarquee targetId="early-access-form" />
       <div className="flex h-screen justify-center">
-        <div className="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-1/3 px-4 pt-12 mx-auto" id="main-content">
+        <div className="w-full sm:w-4/5 md:w-3/5 lg:w-2/5 xl:w-2/5 2xl:w-2/5 px-4 pt-12 mx-auto" id="main-content">
           <div className="flex items-center flex-col">
             <h1 className="heading-1 !text-6xl sm:!text-7xl">Compute Craft</h1>
             <span className="caption my-4">Performance Optimization for the Future</span>
           </div>
-          <hr />
+          <hr className="block sm:hidden" />
           <h2 className="heading-2">What are we doing?</h2>
-          <p className="body-face mb-6">
+          <p className="body-face mb-10">
             We are redefining how GPU workloads achieve peak performance. Our optimization solution enhances efficiency
             across media, finance, healthcare, aerospace, and robotics to unlock faster, smarter, and more scalable
             computing.
           </p>
-          <hr />
+          <hr className="block sm:hidden" />
           <h2 className="heading-2">Our Mission</h2>
           <h3 className="heading-3 mt-4">Make GPU performance optimization accessible to companies of all sizes</h3>
           <div className="my-4 text-center">
@@ -43,14 +43,14 @@ export default function Index() {
             performance improvements across diverse use cases.
           </p>
           <span className="caption-heavy">Resource Efficiency</span>
-          <p className="body-face mb-6">
+          <p className="body-face mb-10">
             Achieve more with your existing infrastructure. Our solution can reduce compute costs while maintaining or
             improving output quality and speed.
           </p>
 
-          <hr />
+          <hr className="block sm:hidden" />
           <h2 className="heading-2">Who are we?</h2>
-          <p className="body-face mb-6">
+          <p className="body-face mb-10">
             Our founding team brings together experience in architecting GPU’s at{" "}
             <span className="font-medium underline underline-offset-2">Nvidia</span> and building enterprise ML infra at{" "}
             <span className="font-medium underline underline-offset-2">SAP</span>, with academic backgrounds from
@@ -59,15 +59,17 @@ export default function Index() {
             <span className="font-medium underline underline-offset-2">UPenn</span>.
           </p>
 
-          <hr />
-          <h2 className="heading-2">Early Access</h2>
+          <hr className="block sm:hidden" />
+          <h2 className="heading-2" id="early-access-form">
+            Early Access
+          </h2>
           <h3 className="heading-3 mt-4">Join Our Partnership Program</h3>
           <p className="body-face mb-6">
             For information regarding early access opportunities, please submit inquiries below. Our team will contact
             you to discuss how our technology can address your specific performance challenges.
           </p>
 
-          <Form method="post" className="w-full mx-auto text-xs mb-6" id="early-access-form">
+          <Form method="post" className="w-full mx-auto text-xs mb-6">
             {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="form-label">
