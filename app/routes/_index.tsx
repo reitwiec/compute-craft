@@ -4,12 +4,14 @@ import SubmitButton from "~/components/SubmitButton";
 import { Link } from "@remix-run/react";
 import landing from "../designs/landing.png";
 import ScrollingMarquee from "~/components/Marquee";
+import { useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [{ title: "Compute Craft" }, { name: "description", content: "Performance Optimization for the Future" }];
 };
 
 export default function Index() {
+  const [formState, setformState] = useState("active");
   return (
     <div>
       <ScrollingMarquee targetId="early-access-form" />
@@ -69,7 +71,27 @@ export default function Index() {
             you to discuss how our technology can address your specific performance challenges.
           </p>
 
-          <Form method="post" className="w-full mx-auto text-xs mb-6">
+          <Form
+            method="post"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setformState("submitting");
+              const res = await fetch(
+                "https://script.google.com/macros/s/AKfycbz9cPul6cdLIouUmEjqU3vamuXuobfEJ8CcPlQ7gjG6g3H2pcddxwnbxIUPK_LJfUnjyQ/exec",
+                {
+                  method: "POST",
+                  body: new FormData(e.target),
+                }
+              );
+              setformState("submitted");
+              setTimeout(() => {
+                e.target.reset();
+                setformState("active");
+              }, 1000);
+            }}
+            // action="https://script.google.com/macros/s/AKfycbz9cPul6cdLIouUmEjqU3vamuXuobfEJ8CcPlQ7gjG6g3H2pcddxwnbxIUPK_LJfUnjyQ/exec"
+            className="w-full mx-auto text-xs mb-6"
+          >
             {/* Name Field */}
             <div className="mb-4">
               <label htmlFor="name" className="form-label">
@@ -105,8 +127,14 @@ export default function Index() {
               <label htmlFor="industry" className="form-label">
                 Industry
               </label>
-              <select id="industry" name="industry" required className="form-input placeholder-black/30">
-                <option value="" disabled selected>
+              <select
+                id="industry"
+                name="industry"
+                defaultValue={"default"}
+                required
+                className="form-input placeholder-black/30"
+              >
+                <option value="default" disabled>
                   Select your industry
                 </option>
                 <option value="media">Media</option>
@@ -131,18 +159,18 @@ export default function Index() {
 
             {/* Submit Button */}
             <div className="mt-6">
-              <SubmitButton text="Request Early Access" />
+              <SubmitButton status={formState} />
             </div>
           </Form>
 
           <div className="flex space-x-6 items-center mt-6 pb-8">
-            <Link to="/privacy-policy" className="body-face hover:text-gray-900 !text-xs transition duration-300">
+            {/* <Link to="/privacy-policy" className="body-face hover:text-gray-900 !text-xs transition duration-300">
               Privacy Policy
             </Link>
 
             <Link to="/privacy-policy" className="body-face hover:text-gray-900 !text-xs transition duration-300">
               LinkedIn
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
