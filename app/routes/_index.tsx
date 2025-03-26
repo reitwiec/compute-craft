@@ -54,11 +54,11 @@ export default function Index() {
           <h2 className="heading-2">Who are we?</h2>
           <p className="body-face mb-10">
             Our founding team brings together experience in architecting GPU’s at{" "}
-            <span className="font-medium underline underline-offset-2">Nvidia</span> and building enterprise ML infra at{" "}
-            <span className="font-medium underline underline-offset-2">SAP</span>, with academic backgrounds from
-            institutions such as <span className="font-medium underline underline-offset-2">Stanford</span>,{" "}
-            <span className="font-medium underline underline-offset-2">Cornell</span>, and{" "}
-            <span className="font-medium underline underline-offset-2">UPenn</span>.
+            <span className="font-medium highlight">NVIDIA</span> and building enterprise ML infra at{" "}
+            <span className="font-medium highlight">SAP</span>, with academic backgrounds from institutions such as{" "}
+            <span className="font-medium highlight">Stanford</span>,{" "}
+            <span className="font-medium highlight">Cornell</span>, and{" "}
+            <span className="font-medium highlight">UPenn</span>.
           </p>
 
           <hr className="block sm:hidden" />

@@ -4,7 +4,8 @@
 
 html,
 body {
-  @apply bg-white;
+  /* @apply bg-white; */
+  background: linear-gradient(206.93deg, #F1F5F8 0%, #F9F1F5 68.87%);
 }
 
 html{
@@ -131,6 +132,10 @@ hr {
   width: max-content;
   gap: 4.8rem;
   padding-left: 4.8rem;
+}
+
+.highlight{
+  background-color: #C5EF75;
 }
 
 @keyframes marquee-move-text {
